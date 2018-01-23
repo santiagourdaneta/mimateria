@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>
-    Larancer - Freelance business management system
+    Mi Materia Online
 </title>
 
 <meta http-equiv="X-UA-Compatible"
