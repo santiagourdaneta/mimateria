@@ -1639,6 +1639,8 @@
     function mergeData(to, from) {
         var key, toVal, fromVal;
         for (key in from) {
+            // prevent prototype pollution
+            if (key === '__proto__' || key === 'constructor') continue;
             toVal = to[key];
             fromVal = from[key];
             if (!hasOwn(to, key)) {
