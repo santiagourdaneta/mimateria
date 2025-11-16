@@ -10,6 +10,8 @@
 }(this, function () { 'use strict';
 
     function set(obj, key, val) {
+        // Prevent prototype pollution
+        if (key === '__proto__' || key === 'constructor' || key === 'prototype') return;
         if (hasOwn(obj, key)) {
             obj[key] = val;
             return;
@@ -1639,6 +1641,8 @@
     function mergeData(to, from) {
         var key, toVal, fromVal;
         for (key in from) {
+            // Prevent prototype pollution
+            if (key === '__proto__' || key === 'constructor' || key === 'prototype') continue;
             toVal = to[key];
             fromVal = from[key];
             if (!hasOwn(to, key)) {
